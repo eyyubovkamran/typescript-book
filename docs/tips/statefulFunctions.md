@@ -31,3 +31,12 @@ called(); // Called : 2
 ```
 
 > C++ developers also try and achieve this using a pattern they call `functor` (a class that overrides the operator `()`).
+
+Another approach is to use module pattern:
+
+```ts
+const called = (() => {
+    let count = 0;
+    return () => console.log("Called : ", count++)
+})()
+```
